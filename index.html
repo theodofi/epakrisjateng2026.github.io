@@ -1,341 +1,45 @@
 <!doctype html>
 <html lang="id" class="h-full">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laporan Penyuluhan - Bimas Kristen Jateng</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="/_sdk/element_sdk.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <style>
-    body {
-      box-sizing: border-box;
-    }
-    * {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-    .month-btn {
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .month-btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.2);
-    }
-    .gradient-bg {
-      background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #1e3a5f 100%);
-    }
-    .card-gradient {
-      background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-    }
-    .logo-glow {
-      filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
-    }
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    .animate-fade-in {
-      animation: fadeInUp 0.6s ease-out forwards;
-    }
-    .month-grid > * {
-      animation: fadeInUp 0.5s ease-out forwards;
-      opacity: 0;
-    }
-    .month-grid > *:nth-child(1) { animation-delay: 0.05s; }
-    .month-grid > *:nth-child(2) { animation-delay: 0.1s; }
-    .month-grid > *:nth-child(3) { animation-delay: 0.15s; }
-    .month-grid > *:nth-child(4) { animation-delay: 0.2s; }
-    .month-grid > *:nth-child(5) { animation-delay: 0.25s; }
-    .month-grid > *:nth-child(6) { animation-delay: 0.3s; }
-    .month-grid > *:nth-child(7) { animation-delay: 0.35s; }
-    .month-grid > *:nth-child(8) { animation-delay: 0.4s; }
-    .month-grid > *:nth-child(9) { animation-delay: 0.45s; }
-    .month-grid > *:nth-child(10) { animation-delay: 0.5s; }
-    .month-grid > *:nth-child(11) { animation-delay: 0.55s; }
-    .month-grid > *:nth-child(12) { animation-delay: 0.6s; }
-  </style>
-  <style>@view-transition { navigation: auto; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
-  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
- </head>
- <body class="h-full gradient-bg">
-  <div class="h-full w-full overflow-auto">
-   <div class="min-h-full w-full px-4 py-8 md:py-12">
-    <!-- Header Section -->
-    <header class="text-center mb-10 animate-fade-in">
-     <!-- Logo Kemenag -->
-     <div class="flex justify-center mb-6"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Kementerian_Agama_new_logo.png/708px-Kementerian_Agama_new_logo.png" alt="Logo Kementerian Agama" class="w-28 h-28 md:w-32 md:h-32 logo-glow" loading="lazy" onerror="console.error('Logo failed to load:', this.src); this.style.background='#1e3a5f'; this.alt='Logo Kementerian Agama';">
-     </div>
-     <div class="space-y-3">
-      <h1 id="main-title" class="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">Sistem Pelaporan Kegiatan<br>
-        Penyuluh Agama Kristen</h1>
-      <p id="subtitle" class="text-base md:text-lg text-blue-200 font-medium">Bimas Kristen Kementerian Agama Provinsi Jawa Tengah</p>
-      <div class="flex items-center justify-center gap-2 text-yellow-400 font-semibold text-lg md:text-xl mt-4">
-       <span>📅</span> <span>Tahun 2026</span>
-      </div>
-     </div>
-    </header><!-- Instruction Card -->
-    <div class="max-w-4xl mx-auto mb-8 animate-fade-in" style="animation-delay: 0.2s;">
-     <div class="card-gradient backdrop-blur-sm rounded-2xl border border-white/20 p-5 md:p-6">
-      <div class="flex items-start gap-4">
-       <div class="w-12 h-12 rounded-full bg-yellow-500/20 flex items-center justify-center flex-shrink-0">
-        <span class="text-2xl">📋</span>
-       </div>
-       <div>
-        <h2 class="text-white font-semibold text-lg mb-2">Petunjuk Pengisian</h2>
-        <p id="instruction-text" class="text-blue-100 text-sm md:text-base leading-relaxed">Silakan klik tombol bulan sesuai periode pelaporan Anda. Anda akan diarahkan ke formulir Google untuk mengisi laporan kegiatan penyuluhan dan pembinaan.</p>
-       </div>
-      </div>
-     </div>
-    </div>
-    <!-- Surat Tugas Card -->
-    <div class="max-w-4xl mx-auto mb-8 animate-fade-in" style="animation-delay: 0.3s;">
-     <div class="card-gradient backdrop-blur-sm rounded-2xl border border-yellow-500/30 p-5 md:p-6 shadow-lg">
-      <div class="flex flex-col md:flex-row items-center gap-4">
-       <div class="w-16 h-16 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center flex-shrink-0 shadow-lg">
-        <span class="text-3xl">📄</span>
-       </div>
-       <div class="flex-1 text-center md:text-left">
-        <h2 class="text-white font-bold text-xl mb-2">Surat Tugas Penyuluh Bulanan</h2>
-        <p class="text-blue-100 text-sm md:text-base">Mohon untuk melakukan upload Surat Tugas yang berisi semua kegiatan penyuluhan bulanan dengan melengkapi Hari/Tanggal, Waktu, Tempat dan Nama Kelompok Binaan</p>
-       </div><a id="link-assignment-letter" href="https://forms.gle/MTEvxx94BjG7vC7i8" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center gap-2"> <span id="assignment-letter-btn" class="text-base">📄 Surat Tugas</span> </a>
-      </div>
-     </div>
-    </div>
-    <!-- Pilihan Bulan Grid -->
-    <div class="max-w-5xl mx-auto">
-     <div class="month-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
-      <!-- Januari -->
-      <div class="month-btn">
-       <div class="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-4 md:p-5">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold text-lg">
-         01
-        </div>
-        <h3 class="text-white font-semibold text-base md:text-lg mb-3">Januari 2026</h3>
-        <div class="space-y-2">
-         <a href="https://forms.gle/GiVcFtcem6ytDtzz9" target="_blank" rel="noopener noreferrer" class="block bg-green-500/90 hover:bg-green-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="planning-btn-jan">📝 Rencana</span> </a> 
-         <a href="https://forms.gle/RnoxVBZejWERMs2bA" target="_blank" rel="noopener noreferrer" class="block bg-orange-500/90 hover:bg-orange-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="report-btn-jan">📊 Realisasi</span> </a>
-        </div>
-       </div>
-      </div><!-- Februari -->
-      <div class="month-btn">
-       <div class="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-4 md:p-5">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold text-lg">
-         02
-        </div>
-        <h3 class="text-white font-semibold text-base md:text-lg mb-3">Februari 2026</h3>
-        <div class="space-y-2">
-         <a href="https://forms.gle/PPsmVs3YJsnUy6T29" target="_blank" rel="noopener noreferrer" class="block bg-green-500/90 hover:bg-green-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="planning-btn-feb">📝 Rencana</span> </a> 
-         <a href="https://forms.gle/9mxLv9WvfDkyjtNE8" target="_blank" rel="noopener noreferrer" class="block bg-orange-500/90 hover:bg-orange-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="report-btn-feb">📊 Realisasi</span> </a>
-        </div>
-       </div>
-      </div><!-- Maret -->
-      <div class="month-btn">
-       <div class="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-4 md:p-5">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold text-lg">
-         03
-        </div>
-        <h3 class="text-white font-semibold text-base md:text-lg mb-3">Maret 2026</h3>
-        <div class="space-y-2">
-         <a href="" target="_blank" rel="noopener noreferrer" class="block bg-green-500/90 hover:bg-green-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="planning-btn-mar">📝 Rencana</span> </a> 
-         <a href="" target="_blank" rel="noopener noreferrer" class="block bg-orange-500/90 hover:bg-orange-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="report-btn-mar">📊 Realisasi</span> </a>
-        </div>
-       </div>
-      </div><!-- April -->
-      <div class="month-btn">
-       <div class="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-4 md:p-5">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white font-bold text-lg">
-         04
-        </div>
-        <h3 class="text-white font-semibold text-base md:text-lg mb-3">April 2026</h3>
-        <div class="space-y-2">
-         <a href="" target="_blank" rel="noopener noreferrer" class="block bg-green-500/90 hover:bg-green-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="planning-btn-apr">📝 Rencana</span> </a> 
-         <a href="" target="_blank" rel="noopener noreferrer" class="block bg-orange-500/90 hover:bg-orange-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="report-btn-apr">📊 Realisasi</span> </a>
-        </div>
-       </div>
-      </div><!-- Mei -->
-      <div class="month-btn">
-       <div class="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-4 md:p-5">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white font-bold text-lg">
-         05
-        </div>
-        <h3 class="text-white font-semibold text-base md:text-lg mb-3">Mei 2026</h3>
-        <div class="space-y-2">
-         <a href="" target="_blank" rel="noopener noreferrer" class="block bg-green-500/90 hover:bg-green-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="planning-btn-may">📝 Rencana</span> </a> 
-         <a href="" target="_blank" rel="noopener noreferrer" class="block bg-orange-500/90 hover:bg-orange-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="report-btn-may">📊 Realisasi</span> </a>
-        </div>
-       </div>
-      </div><!-- Juni -->
-      <div class="month-btn">
-       <div class="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-4 md:p-5">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white font-bold text-lg">
-         06
-        </div>
-        <h3 class="text-white font-semibold text-base md:text-lg mb-3">Juni 2026</h3>
-        <div class="space-y-2">
-         <a href="" target="_blank" rel="noopener noreferrer" class="block bg-green-500/90 hover:bg-green-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="planning-btn-jun">📝 Rencana</span> </a> 
-         <a href="" target="_blank" rel="noopener noreferrer" class="block bg-orange-500/90 hover:bg-orange-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="report-btn-jun">📊 Realisasi</span> </a>
-        </div>
-       </div>
-      </div><!-- Juli -->
-      <div class="month-btn">
-       <div class="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-4 md:p-5">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-bold text-lg">
-         07
-        </div>
-        <h3 class="text-white font-semibold text-base md:text-lg mb-3">Juli 2026</h3>
-        <div class="space-y-2">
-         <a href="" target="_blank" rel="noopener noreferrer" class="block bg-green-500/90 hover:bg-green-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="planning-btn-jul">📝 Rencana</span> </a> 
-         <a href="" target="_blank" rel="noopener noreferrer" class="block bg-orange-500/90 hover:bg-orange-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="report-btn-jul">📊 Realisasi</span> </a>
-        </div>
-       </div>
-      </div><!-- Agustus -->
-      <div class="month-btn">
-       <div class="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-4 md:p-5">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-bold text-lg">
-         08
-        </div>
-        <h3 class="text-white font-semibold text-base md:text-lg mb-3">Agustus 2026</h3>
-        <div class="space-y-2">
-         <a href="" target="_blank" rel="noopener noreferrer" class="block bg-green-500/90 hover:bg-green-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="planning-btn-aug">📝 Rencana</span> </a> 
-         <a href="" target="_blank" rel="noopener noreferrer" class="block bg-orange-500/90 hover:bg-orange-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="report-btn-aug">📊 Realisasi</span> </a>
-        </div>
-       </div>
-      </div><!-- September -->
-      <div class="month-btn">
-       <div class="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-4 md:p-5">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-bold text-lg">
-         09
-        </div>
-        <h3 class="text-white font-semibold text-base md:text-lg mb-3">September 2026</h3>
-        <div class="space-y-2">
-         <a href="" target="_blank" rel="noopener noreferrer" class="block bg-green-500/90 hover:bg-green-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="planning-btn-sep">📝 Rencana</span> </a> 
-         <a href="" target="_blank" rel="noopener noreferrer" class="block bg-orange-500/90 hover:bg-orange-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="report-btn-sep">📊 Realisasi</span> </a>
-        </div>
-       </div>
-      </div><!-- Oktober -->
-      <div class="month-btn">
-       <div class="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-4 md:p-5">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white font-bold text-lg">
-         10
-        </div>
-        <h3 class="text-white font-semibold text-base md:text-lg mb-3">Oktober 2026</h3>
-        <div class="space-y-2">
-         <a href="" target="_blank" rel="noopener noreferrer" class="block bg-green-500/90 hover:bg-green-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="planning-btn-oct">📝 Rencana</span> </a> 
-         <a href="" target="_blank" rel="noopener noreferrer" class="block bg-orange-500/90 hover:bg-orange-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="report-btn-oct">📊 Realisasi</span> </a>
-        </div>
-       </div>
-      </div><!-- November -->
-      <div class="month-btn">
-       <div class="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-4 md:p-5">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white font-bold text-lg">
-         11
-        </div>
-        <h3 class="text-white font-semibold text-base md:text-lg mb-3">November 2026</h3>
-        <div class="space-y-2">
-         <a href="" target="_blank" rel="noopener noreferrer" class="block bg-green-500/90 hover:bg-green-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="planning-btn-nov">📝 Rencana</span> </a> 
-         <a href="" target="_blank" rel="noopener noreferrer" class="block bg-orange-500/90 hover:bg-orange-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="report-btn-nov">📊 Realisasi</span> </a>
-        </div>
-       </div>
-      </div><!-- Desember -->
-      <div class="month-btn">
-       <div class="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-4 md:p-5">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white font-bold text-lg">
-         12
-        </div>
-        <h3 class="text-white font-semibold text-base md:text-lg mb-3">Desember 2026</h3>
-        <div class="space-y-2">
-         <a href="" target="_blank" rel="noopener noreferrer" class="block bg-green-500/90 hover:bg-green-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="planning-btn-dec">📝 Rencana</span> </a> 
-         <a href="" target="_blank" rel="noopener noreferrer" class="block bg-orange-500/90 hover:bg-orange-600 text-white text-xs md:text-sm font-medium py-2 px-3 rounded-lg transition-colors"> <span id="report-btn-dec">📊 Realisasi</span> </a>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div><!-- Footer -->
-    <footer class="mt-12 text-center animate-fade-in" style="animation-delay: 0.8s;">
-     <div class="max-w-2xl mx-auto">
-      <div class="h-px bg-gradient-to-r from-transparent via-white/30 to-transparent mb-6"></div>
-      <p class="text-blue-200 text-sm">© 2026 Pembimbing Masyarakat Kristen<br>
-        Kantor Wilayah Kementerian Agama Provinsi Jawa Tengah</p>
-     </div>
-    </footer>
-   </div>
-  </div>
-  <script>
-    const defaultConfig = {
-      main_title: "Sistem Pelaporan Kegiatan<br>Penyuluh Agama Kristen",
-      subtitle: "Bimas Kristen Kementerian Agama Provinsi Jawa Tengah",
-      instruction_text: "Silakan klik tombol bulan sesuai periode pelaporan Anda. Anda akan diarahkan ke formulir Google untuk mengisi laporan kegiatan penyuluhan dan pembinaan.",
-      planning_label: "📝 Rencana",
-      report_label: "📊 Realisasi",
-      primary_color: "#1e3a5f",
-      secondary_color: "#FFD700",
-      text_color: "#ffffff"
-    };
-
-    async function onConfigChange(config) {
-      const mainTitle = document.getElementById('main-title');
-      const subtitle = document.getElementById('subtitle');
-      const instructionText = document.getElementById('instruction-text');
-
-      if (mainTitle) {
-        mainTitle.innerHTML = config.main_title || defaultConfig.main_title;
-      }
-      if (subtitle) {
-        subtitle.textContent = config.subtitle || defaultConfig.subtitle;
-      }
-      if (instructionText) {
-        instructionText.textContent = config.instruction_text || defaultConfig.instruction_text;
-      }
-
-      // Update button labels for all months
-      const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
-      months.forEach(month => {
-        const planningBtn = document.getElementById(`planning-btn-${month}`);
-        const reportBtn = document.getElementById(`report-btn-${month}`);
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Penyuluhan - Bimas Kristen Jateng</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="h-full gradient-bg text-white">
+    <div class="h-full w-full overflow-auto px-4 py-8">
         
-        if (planningBtn) {
-          planningBtn.textContent = config.planning_label || defaultConfig.planning_label;
-        }
-        if (reportBtn) {
-          reportBtn.textContent = config.report_label || defaultConfig.report_label;
-        }
-      });
-    }
+        <header class="text-center mb-10 animate-fade-in">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Kementerian_Agama_new_logo.png/708px-Kementerian_Agama_new_logo.png" 
+                 alt="Logo Kemenag" class="w-28 h-28 mx-auto mb-6 logo-glow">
+            <h1 class="text-2xl md:text-4xl font-bold mb-2">Sistem Pelaporan Kegiatan<br>Penyuluh Agama Kristen</h1>
+            <p class="text-blue-200">Bimas Kristen Kanwil Kemenag Provinsi Jawa Tengah</p>
+            <div class="inline-block bg-yellow-500/20 text-yellow-400 px-4 py-1 rounded-full font-bold mt-4">📅 Tahun 2026</div>
+        </header>
 
-    function mapToCapabilities(config) {
-      return {
-        recolorables: [],
-        borderables: [],
-        fontEditable: undefined,
-        fontSizeable: undefined
-      };
-    }
+        <div class="max-w-4xl mx-auto mb-8 animate-fade-in" style="animation-delay: 0.2s;">
+            <div class="card-gradient rounded-2xl border border-yellow-500/30 p-6 flex flex-col md:flex-row items-center gap-4">
+                <div class="text-3xl bg-yellow-500 p-3 rounded-full">📄</div>
+                <div class="flex-1 text-center md:text-left">
+                    <h2 class="font-bold text-xl">Surat Tugas Penyuluh Bulanan</h2>
+                    <p class="text-sm text-blue-100">Upload Surat Tugas yang berisi jadwal kegiatan bulanan Anda.</p>
+                </div>
+                <a href="https://forms.gle/MTEvxx94BjG7vC7i8" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-2 px-6 rounded-xl transition-transform hover:scale-105">Isi Surat Tugas</a>
+            </div>
+        </div>
 
-    function mapToEditPanelValues(config) {
-      return new Map([
-        ["main_title", (config.main_title || defaultConfig.main_title).replace(/<br>/g, ' ')],
-        ["subtitle", config.subtitle || defaultConfig.subtitle],
-        ["instruction_text", config.instruction_text || defaultConfig.instruction_text],
-        ["planning_label", config.planning_label || defaultConfig.planning_label],
-        ["report_label", config.report_label || defaultConfig.report_label]
-      ]);
-    }
+        <div id="container-bulan" class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            </div>
 
-    if (window.elementSdk) {
-      window.elementSdk.init({
-        defaultConfig,
-        onConfigChange,
-        mapToCapabilities,
-        mapToEditPanelValues
-      });
-    }
-  </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d35297d76418de9',t:'MTc3MjAwMTExMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+        <footer class="mt-12 text-center text-blue-300 text-sm pb-8">
+            <div class="w-24 h-px bg-blue-400 mx-auto mb-4 opacity-30"></div>
+            © 2026 Pembimbing Masyarakat Kristen - Kanwil Kemenag Jawa Tengah
+        </footer>
+    </div>
+    <script src="js/script.js"></script>
+</body>
 </html>
