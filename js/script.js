@@ -3,15 +3,15 @@ const daftarBulan = [
     { nama: 'Januari', rencana: 'https://forms.gle/GiVcFtcem6ytDtzz9', realisasi: 'https://forms.gle/RnoxVBZejWERMs2bA', warna: 'from-blue-400 to-blue-600' },
     { nama: 'Februari', rencana: 'https://forms.gle/PPsmVs3YJsnUy6T29', realisasi: 'https://forms.gle/9mxLv9WvfDkyjtNE8', warna: 'from-blue-400 to-blue-600' },
     { nama: 'Maret', rencana: 'https://forms.gle/6a9mmF3hp2X2oufR7', realisasi: 'https://forms.gle/TwbwEyjQFZLVQQL16', warna: 'from-blue-400 to-blue-600' },
-    { nama: 'April', rencana: '#', realisasi: '#', warna: 'from-green-400 to-green-600' },
-    { nama: 'Mei', rencana: '#', realisasi: '#', warna: 'from-green-400 to-green-600' },
-    { nama: 'Juni', rencana: '#', realisasi: '#', warna: 'from-green-400 to-green-600' },
-    { nama: 'Juli', rencana: '#', realisasi: '#', warna: 'from-orange-400 to-orange-600' },
-    { nama: 'Agustus', rencana: '#', realisasi: '#', warna: 'from-orange-400 to-orange-600' },
-    { nama: 'September', rencana: '#', realisasi: '#', warna: 'from-orange-400 to-orange-600' },
-    { nama: 'Oktober', rencana: '#', realisasi: '#', warna: 'from-purple-400 to-purple-600' },
-    { nama: 'November', rencana: '#', realisasi: '#', warna: 'from-purple-400 to-purple-600' },
-    { nama: 'Desember', rencana: '#', realisasi: '#', warna: 'from-purple-400 to-purple-600' }
+    { nama: 'April', rencana: 'https://forms.gle/wsCYfX8CKyjRJK9e7', realisasi: 'https://forms.gle/Byq9wxGiNk583LsF8', warna: 'from-green-400 to-green-600' },
+    { nama: 'Mei', rencana: 'https://forms.gle/fvZ8ytpiDvnFfSUM6', realisasi: 'https://forms.gle/vCV9r6wjEG3mM9F58', warna: 'from-green-400 to-green-600' },
+    { nama: 'Juni', rencana: 'https://forms.gle/PZuJ5uSNhaP4VGcx9', realisasi: 'https://forms.gle/MkoB7bgE6W13DBMd7', warna: 'from-green-400 to-green-600' },
+    { nama: 'Juli', rencana: 'https://forms.gle/5qMrXuazDUoCd4x18', realisasi: 'https://forms.gle/pzw47biUQnMhtYYH6', warna: 'from-orange-400 to-orange-600' },
+    { nama: 'Agustus', rencana: 'https://forms.gle/qfsHqPGFBhggUhK99', realisasi: 'https://forms.gle/vXrqWNW64YmLym5y7', warna: 'from-orange-400 to-orange-600' },
+    { nama: 'September', rencana: 'https://forms.gle/55rzis9r658f4eRV8', realisasi: 'https://forms.gle/H7sYBbRFTXztdmE26', warna: 'from-orange-400 to-orange-600' },
+    { nama: 'Oktober', rencana: 'https://forms.gle/9gVB7fbZP1Xef6nZ8', realisasi: 'https://forms.gle/AUHeP6pz5RC8XhzG6', warna: 'from-purple-400 to-purple-600' },
+    { nama: 'November', rencana: 'https://forms.gle/wDs2TPYmGbyQcC5S7', realisasi: 'https://forms.gle/gRWSt4i2rcDKGzJD6', warna: 'from-purple-400 to-purple-600' },
+    { nama: 'Desember', rencana: 'https://forms.gle/63CiK4oLXkjndyU69', realisasi: 'https://forms.gle/usAZbSBy55iXDoNB8', warna: 'from-purple-400 to-purple-600' }
 ];
 
 function renderBulan() {
